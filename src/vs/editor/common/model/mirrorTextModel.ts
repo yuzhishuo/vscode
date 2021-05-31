@@ -23,6 +23,15 @@ export interface IModelChangedEvent {
 	 * The new version id the model has transitioned to.
 	 */
 	readonly versionId: number;
+	/**
+	 * Indicates if this text change was caused by an undo operation.
+	 */
+	readonly isUndoing: boolean;
+
+	/**
+	 * Indicates if this text change was caused by an redo operation.
+	 */
+	readonly isRedoing: boolean;
 }
 
 export interface IMirrorTextModel {

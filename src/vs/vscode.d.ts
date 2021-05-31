@@ -10023,6 +10023,16 @@ declare module 'vscode' {
 		 * An array of content changes.
 		 */
 		readonly contentChanges: readonly TextDocumentContentChangeEvent[];
+
+		/**
+		 * Indicates if this text change was caused by an undo operation.
+		 */
+		readonly isUndoing: boolean;
+
+		/**
+		 * Indicates if this text change was caused by an redo operation.
+		 */
+		readonly isRedoing: boolean;
 	}
 
 	/**

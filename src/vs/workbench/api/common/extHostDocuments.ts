@@ -134,7 +134,9 @@ export class ExtHostDocuments implements ExtHostDocumentsShape {
 		data._acceptIsDirty(isDirty);
 		this._onDidChangeDocument.fire({
 			document: data.document,
-			contentChanges: []
+			contentChanges: [],
+			isRedoing: false,
+			isUndoing: false
 		});
 	}
 
@@ -155,7 +157,9 @@ export class ExtHostDocuments implements ExtHostDocumentsShape {
 					rangeLength: change.rangeLength,
 					text: change.text
 				};
-			})
+			}),
+			isRedoing: events.isRedoing,
+			isUndoing: events.isUndoing
 		}));
 	}
 
